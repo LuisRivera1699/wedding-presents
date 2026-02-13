@@ -7,7 +7,7 @@ const WEDDING_DATE_PLACEHOLDER = "07 de Marzo, 2026";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
+    <section className="hero-section relative flex flex-col items-center justify-center overflow-hidden">
       <motion.div
         className="absolute inset-0 z-0"
         initial={{ opacity: 0, scale: 1.05 }}

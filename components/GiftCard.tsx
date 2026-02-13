@@ -29,10 +29,9 @@ export function GiftCard({ gift, contributions, onAportar }: GiftCardProps) {
   return (
     <motion.article
       className="bg-wedding-cream rounded-2xl shadow-md overflow-hidden flex flex-col"
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
     >
       <div className="relative aspect-[4/3] bg-wedding-beige">
         <Image

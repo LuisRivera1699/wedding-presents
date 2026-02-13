@@ -28,9 +28,8 @@ export function ProgressBar({
         <motion.div
           className="h-full bg-wedding-soft rounded-full"
           initial={{ width: 0 }}
-          whileInView={{ width: `${percentage}%` }}
-          viewport={{ once: true, margin: "-20px" }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          animate={{ width: `${percentage}%` }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         />
       </div>
     </div>

@@ -7,10 +7,9 @@ export function ExplanatorySection() {
     <motion.section
       id="explicacion"
       className="py-20 sm:py-28 px-4"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
     >
       <div className="max-w-2xl mx-auto text-center">
         <p className="font-body text-wedding-gray text-lg sm:text-xl leading-relaxed">

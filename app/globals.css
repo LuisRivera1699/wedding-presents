@@ -13,6 +13,13 @@ html {
   min-height: 100%;
 }
 
+/* Hero: altura estable en Android Chrome (vh falla con la barra de URL; dvh + fallback en px) */
+.hero-section {
+  min-height: 500px;
+  min-height: 90vh;
+  min-height: 100dvh;
+}
+
 body {
   color: #1F3C88;
   color: var(--foreground);
