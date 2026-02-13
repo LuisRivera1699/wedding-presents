@@ -15,7 +15,7 @@ export function Hero() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <Image
-          src="https://firebasestorage.googleapis.com/v0/b/atmo-67f01.firebasestorage.app/o/bg.jpg?alt=media&token=ff6d168b-4d41-44e3-b241-90ba9dfb3bbe"
+          src="https://firebasestorage.googleapis.com/v0/b/atmo-67f01.firebasestorage.app/o/FOT_8015.jpg?alt=media&token=82d71176-edf6-4974-8def-f957ad455991"
           alt="Wedding"
           fill
           className="object-cover md:object-contain"

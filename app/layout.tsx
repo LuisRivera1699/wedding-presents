@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Sofía & Luis - Regalos",
     images: [
       {
-        url: "https://firebasestorage.googleapis.com/v0/b/atmo-67f01.firebasestorage.app/o/photo.png?alt=media&token=8ae75fcf-9b64-4a54-86d0-8eba2db62f4c",
+        url: "https://firebasestorage.googleapis.com/v0/b/atmo-67f01.firebasestorage.app/o/FOT_8015.jpg?alt=media&token=82d71176-edf6-4974-8def-f957ad455991",
         width: 1200,
         height: 630,
         alt: "Sofía & Luis - Nuestra boda",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description:
       "Queremos que seas parte de nuestros sueños. Aporta a lo que más anhelamos para nuestra vida juntos. 💙",
     images: [
-      "https://firebasestorage.googleapis.com/v0/b/atmo-67f01.firebasestorage.app/o/photo.png?alt=media&token=8ae75fcf-9b64-4a54-86d0-8eba2db62f4c",
+      "https://firebasestorage.googleapis.com/v0/b/atmo-67f01.firebasestorage.app/o/FOT_8015.jpg?alt=media&token=82d71176-edf6-4974-8def-f957ad455991",
     ],
   },
 };
