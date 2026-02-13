@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sofía & Luis – Web de Boda
 
-## Getting Started
+Web de boda con lista de regalos por aportes, subida de comprobantes y panel de administración. Estética Pinterest Wedding, construida con Next.js 14 y Firebase.
 
-First, run the development server:
+## Stack
+
+- **Frontend:** Next.js 14 (App Router), TypeScript, TailwindCSS, Framer Motion, React Hook Form, Zod
+- **Backend:** Firebase (Firestore, Storage, Authentication solo para admin)
+
+## Requisitos
+
+- Node.js 18+
+- npm o yarn
+- Cuenta de Firebase
+
+## Setup
+
+### 1. Clonar e instalar
+
+```bash
+git clone <repo>
+cd presents
+npm install
+```
+
+### 2. Variables de entorno
+
+Copia el ejemplo y rellena con tu configuración de Firebase:
+
+```bash
+cp .env.local.example .env.local
+```
+
+Edita `.env.local`:
+
+- `NEXT_PUBLIC_FIREBASE_*`: valores de tu proyecto en [Firebase Console](https://console.firebase.google.com) → Configuración del proyecto → Tus apps.
+- `NEXT_PUBLIC_ADMIN_EMAIL`: email del usuario que podrá acceder a `/admin` (debe existir en Firebase Authentication con Email/Password).
+
+### 3. Firebase
+
+1. Crea un proyecto en Firebase.
+2. Activa **Authentication** → método **Correo/Contraseña**.
+3. Crea un usuario con el mismo email que `NEXT_PUBLIC_ADMIN_EMAIL` (para el panel admin).
+4. Activa **Firestore** y **Storage**.
+5. En Firestore, crea las colecciones (opcional; se crean al escribir):
+   - `wedding_gifts`
+   - `wedding_contributions`
+6. En Firestore → Índices: crea un índice compuesto para listar aportes por fecha:
+   - Colección: `wedding_contributions`
+   - Campos: `createdAt` (Descendente)
+
+### 4. Reglas de seguridad
+
+#### Firestore (`firestore.rules`)
+
+```javascript
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Email del admin (reemplaza por el que uses en NEXT_PUBLIC_ADMIN_EMAIL)
+    function isAdmin() {
+      return request.auth != null &&
+        request.auth.token.email == "admin@example.com";
+    }
+
+    // wedding_gifts: lectura pública; escritura solo admin
+    match /wedding_gifts/{giftId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // wedding_contributions: creación pública; lectura de aprobados para progreso; update/delete solo admin
+    match /wedding_contributions/{contributionId} {
+      allow create: if true;
+      allow read: if resource.data.status == "approved" || isAdmin();
+      allow update, delete: if isAdmin();
+    }
+  }
+}
+```
+
+Así el público solo puede leer aportes aprobados (para la barra de progreso) y el admin puede leer todos. Ajusta `"admin@example.com"` al valor de `NEXT_PUBLIC_ADMIN_EMAIL`.
+
+#### Storage (`storage.rules`)
+
+```javascript
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isAdmin() {
+      return request.auth != null &&
+        request.auth.token.email == "admin@example.com";
+    }
+
+    // Comprobantes de pago: cualquiera puede subir; solo admin puede borrar
+    match /wedding_proofs/{allPaths=**} {
+      allow read: if true;
+      allow write: if true;
+      allow delete: if isAdmin();
+    }
+
+    // Imágenes de regalos: solo admin
+    match /wedding_gifts/{allPaths=**} {
+      allow read: if true;
+      allow write, delete: if isAdmin();
+    }
+  }
+}
+```
+
+Sube estas reglas desde la consola de Firebase (Firestore → Reglas / Storage → Reglas).
+
+### 5. Ejecutar en local
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000). El panel admin está en [http://localhost:3000/admin](http://localhost:3000/admin).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy en Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Sube el repo a GitHub.
+2. En [Vercel](https://vercel.com), importa el proyecto desde GitHub.
+3. Añade las mismas variables de entorno que en `.env.local` (con el prefijo `NEXT_PUBLIC_` donde corresponda).
+4. Deploy. Vercel usará el script `build` por defecto.
 
-## Learn More
+## Estructura del proyecto
 
-To learn more about Next.js, take a look at the following resources:
+- `app/` – Rutas (landing, admin, admin/login).
+- `components/` – Hero, sección explicativa, lista de regalos, modal de aporte, barra de progreso.
+- `components/admin/` – Formulario de regalos, tabla de aportes.
+- `hooks/` – useGifts, useContributions, useApprovedContributions, useAuth.
+- `lib/` – Firebase, tipos, esquema Zod del formulario de aporte.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Licencia
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Privado / uso personal.
