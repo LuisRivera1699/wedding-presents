@@ -15,7 +15,7 @@ export function Hero() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80"
+          src="https://luisysofia.vercel.app/images/backgrounds/bg-5.png"
           alt="Wedding"
           fill
           className="object-cover"

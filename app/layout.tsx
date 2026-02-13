@@ -14,7 +14,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sofiayluis.com";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://luisysofia-regalos.vercel.app";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Sofía & Luis - Regalos",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop",
+        url: "https://luisysofia.vercel.app/images/backgrounds/bg-5.png",
         width: 1200,
         height: 630,
         alt: "Sofía & Luis - Nuestra boda",
@@ -50,9 +51,7 @@ export const metadata: Metadata = {
     title: "Sofía & Luis - Regalos",
     description:
       "Queremos que seas parte de nuestros sueños. Aporta a lo que más anhelamos para nuestra vida juntos. 💙",
-    images: [
-      "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=630&fit=crop",
-    ],
+    images: ["https://luisysofia.vercel.app/images/backgrounds/bg-5.png"],
   },
 };
 
