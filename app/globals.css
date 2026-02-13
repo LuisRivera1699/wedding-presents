@@ -7,9 +7,19 @@
   --foreground: #1F3C88;
 }
 
+/* Fallbacks para que siempre se vea contenido en móvil (p. ej. Android Chrome) */
+html {
+  -webkit-text-size-adjust: 100%;
+  min-height: 100%;
+}
+
 body {
+  color: #1F3C88;
   color: var(--foreground);
+  background: #FAF9F6;
   background: var(--background);
+  min-height: 100%;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
 @layer utilities {
