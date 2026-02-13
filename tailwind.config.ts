@@ -13,6 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         wedding: {
           deep: "#1F3C88",
+          deep2: "#0d1b3a",
           soft: "#5DA9E9",
           beige: "#F5E6D3",
           cream: "#FAF9F6",
