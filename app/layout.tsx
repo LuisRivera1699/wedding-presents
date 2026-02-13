@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Sofía & Luis - Regalos",
     images: [
       {
-        url: "https://luisysofia.vercel.app/images/backgrounds/bg-5.png",
+        url: "https://firebasestorage.googleapis.com/v0/b/atmo-67f01.firebasestorage.app/o/photo.png?alt=media&token=8ae75fcf-9b64-4a54-86d0-8eba2db62f4c",
         width: 1200,
         height: 630,
         alt: "Sofía & Luis - Nuestra boda",
@@ -51,7 +51,9 @@ export const metadata: Metadata = {
     title: "Sofía & Luis - Regalos",
     description:
       "Queremos que seas parte de nuestros sueños. Aporta a lo que más anhelamos para nuestra vida juntos. 💙",
-    images: ["https://luisysofia.vercel.app/images/backgrounds/bg-5.png"],
+    images: [
+      "https://firebasestorage.googleapis.com/v0/b/atmo-67f01.firebasestorage.app/o/photo.png?alt=media&token=8ae75fcf-9b64-4a54-86d0-8eba2db62f4c",
+    ],
   },
 };
 

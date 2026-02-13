@@ -15,7 +15,7 @@ export function Hero() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <Image
-          src="https://luisysofia.vercel.app/images/backgrounds/bg-5.png"
+          src="https://firebasestorage.googleapis.com/v0/b/atmo-67f01.firebasestorage.app/o/photo.png?alt=media&token=8ae75fcf-9b64-4a54-86d0-8eba2db62f4c"
           alt="Wedding"
           fill
           className="object-cover"
