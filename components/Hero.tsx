@@ -23,6 +23,7 @@ export function Hero() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-wedding-deep2/40" />
+        <div className="absolute inset-0 bg-wedding-deep/40" />
       </motion.div>
 
       <div className="relative z-10 text-center px-4 max-w-2xl mx-auto">
