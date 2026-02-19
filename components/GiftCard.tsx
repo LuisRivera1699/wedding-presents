@@ -28,7 +28,7 @@ export function GiftCard({ gift, contributions, onAportar }: GiftCardProps) {
 
   return (
     <motion.article
-      className="bg-wedding-cream rounded-2xl shadow-md overflow-hidden flex flex-col"
+      className="bg-wedding-cream rounded-2xl shadow-md overflow-hidden flex flex-col h-full"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -46,7 +46,7 @@ export function GiftCard({ gift, contributions, onAportar }: GiftCardProps) {
         <h3 className="font-display text-xl text-wedding-deep mb-2">
           {gift.name}
         </h3>
-        <p className="font-body text-wedding-gray text-sm mb-4 line-clamp-2 flex-1">
+        <p className="font-body text-wedding-gray text-sm mb-4 flex-1">
           {gift.description}
         </p>
         <p className="font-body text-wedding-gray text-sm mb-2">
