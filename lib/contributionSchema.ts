@@ -3,9 +3,10 @@ import { z } from "zod";
 export const contributionFormSchema = z.object({
   name: z.string().min(1, "Escribe tu nombre"),
   amount: z.number().positive("El monto debe ser mayor a 0"),
-  paymentMethod: z.enum(["Yape Sofía", "Yape Luis", "Interbank"], {
-    message: "Elige un método de pago",
-  }),
+  paymentMethod: z.enum(
+    ["Yape Sofía", "Yape Luis", "Interbank Sofía", "Interbank dólares"],
+    { message: "Elige un método de pago" }
+  ),
   proof: z
     .custom<FileList>()
     .refine((files) => files?.length > 0, "Sube tu comprobante")

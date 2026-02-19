@@ -31,7 +31,8 @@ export interface Contribution {
 export const PAYMENT_METHODS = [
   "Yape Sofía",
   "Yape Luis",
-  "Interbank",
+  "Interbank Sofía",
+  "Interbank dólares",
 ] as const;
 
 export type PaymentMethod = (typeof PAYMENT_METHODS)[number];

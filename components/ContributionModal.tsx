@@ -127,7 +127,7 @@ export function ContributionModal({ gift, onClose }: ContributionModalProps) {
                 <p className="font-body text-wedding-gray mb-4">
                   Puedes realizar tu aporte mediante:
                 </p>
-                <ul className="bg-wedding-beige/50 rounded-xl p-4 mb-6 space-y-2 font-body text-wedding-deep text-sm">
+                <ul className="bg-wedding-beige/50 rounded-xl p-4 mb-6 space-y-3 font-body text-wedding-deep text-sm">
                   <li>
                     <strong>Yape Sofía:</strong> 955170938
                   </li>
@@ -135,9 +135,18 @@ export function ContributionModal({ gift, onClose }: ContributionModalProps) {
                     <strong>Yape Luis:</strong> 957329602
                   </li>
                   <li>
-                    <strong>Cuenta Interbank Sofía:</strong>
+                    <strong>Interbank Sofía:</strong>
                     <br />
                     N° de cuenta: 98742983740347
+                    <br />
+                    CCI: Próximamente
+                  </li>
+                  <li>
+                    <strong>Interbank dólares:</strong>
+                    <br />
+                    N° de cuenta: 2893407312123
+                    <br />
+                    CCI: 00328901340731212365
                   </li>
                 </ul>
 
@@ -204,7 +213,8 @@ export function ContributionModal({ gift, onClose }: ContributionModalProps) {
                       <option value="">Elige una opción</option>
                       <option value="Yape Sofía">Yape Sofía</option>
                       <option value="Yape Luis">Yape Luis</option>
-                      <option value="Interbank">Interbank</option>
+                      <option value="Interbank Sofía">Interbank Sofía</option>
+                      <option value="Interbank dólares">Interbank dólares</option>
                     </select>
                     {errors.paymentMethod && (
                       <p className="mt-1 text-sm text-red-600">
