@@ -139,7 +139,7 @@ export function ContributionModal({ gift, onClose }: ContributionModalProps) {
                     <br />
                     N° de cuenta: 98742983740347
                     <br />
-                    CCI: Próximamente
+                    CCI: 00389801327108911445
                   </li>
                   <li>
                     <strong>Interbank dólares:</strong>
