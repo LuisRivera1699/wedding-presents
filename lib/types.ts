@@ -31,7 +31,7 @@ export interface Contribution {
 export const PAYMENT_METHODS = [
   "Yape Sofía",
   "Yape Luis",
-  "Interbank Sofía",
+  "Interbank Soles",
   "Interbank dólares",
 ] as const;
 

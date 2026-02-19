@@ -4,7 +4,7 @@ export const contributionFormSchema = z.object({
   name: z.string().min(1, "Escribe tu nombre"),
   amount: z.number().positive("El monto debe ser mayor a 0"),
   paymentMethod: z.enum(
-    ["Yape Sofía", "Yape Luis", "Interbank Sofía", "Interbank dólares"],
+    ["Yape Sofía", "Yape Luis", "Interbank Soles", "Interbank dólares"],
     { message: "Elige un método de pago" }
   ),
   proof: z

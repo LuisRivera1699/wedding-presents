@@ -135,7 +135,7 @@ export function ContributionModal({ gift, onClose }: ContributionModalProps) {
                     <strong>Yape Luis:</strong> 957329602
                   </li>
                   <li>
-                    <strong>Interbank Sofía:</strong>
+                    <strong>Interbank Soles:</strong>
                     <br />
                     N° de cuenta: 98742983740347
                     <br />
@@ -213,7 +213,7 @@ export function ContributionModal({ gift, onClose }: ContributionModalProps) {
                       <option value="">Elige una opción</option>
                       <option value="Yape Sofía">Yape Sofía</option>
                       <option value="Yape Luis">Yape Luis</option>
-                      <option value="Interbank Sofía">Interbank Sofía</option>
+                      <option value="Interbank Soles">Interbank Soles</option>
                       <option value="Interbank dólares">Interbank dólares</option>
                     </select>
                     {errors.paymentMethod && (
